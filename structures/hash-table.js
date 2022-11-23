@@ -15,6 +15,7 @@ function hash(string, max) {
   for (var i = 0; i < string.length; i++) {
     hash += string.charCodeAt(i)
   }
+  console.log("final HASH", hash % max)
   return hash % max
 }
 
@@ -67,6 +68,10 @@ function HashTable() {
       }
     }
   }
+
+  this.print = function () {
+    console.log(storage)
+  }
 }
 
 var ht = new HashTable()
@@ -74,5 +79,8 @@ ht.add('beau', 'person')
 ht.add('fido', 'dog')
 ht.add('rex', 'dinosour')
 ht.add('tux', 'penguin')
+ht.add('buddy', 'doll')
+ht.add('sunny', 'dog')
 console.log(ht)
-console.log(ht.lookup('tux'))
+// console.log(ht.lookup('tux'))
+ht.print()
